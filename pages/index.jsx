@@ -7,9 +7,9 @@ import Head from 'next/head';
 import { useSession } from 'next-auth/react';
 
 export const metadata = {
-  title: 'Librelinks',
+  title: 'Onemo',
   description:
-    'Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence.',
+    'The innovative link-in-bio platform that serves as a gateway to the many dimensions of your life. Seamlessly connect your audience to your professional achievements, personal passions, and creative projects. Explore more with Onemore!',
 };
 
 const Home = () => {
@@ -19,20 +19,19 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Librelinks | A free & opensource link in bio tool</title>
+        <title>Onemo</title>
         {/* <!-- Open Graph (OG) meta tags --> */}
-        <meta property="og:url" content="https://librelinks.vercel.app/" />
-        <meta property="og:url" content="https://librelinks.me/" />
-        <meta property="og:url" content="https://www.librelinks.me/" />
+        <meta property="og:url" content="https://onemo.me/" />
+
         <meta property="og:type" content="website" />
         <meta
           property="og:site_name"
-          content="Librelinks - The free & opensource link in bio tool"
+          content="You are more than your bio - Onemo"
         />
-        <meta property="og:title" content="Librelinks" />
+        <meta property="og:title" content="Onemo" />
         <meta
           property="og:description"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="The innovative link-in-bio platform that serves as a gateway to the many dimensions of your life. Seamlessly connect your audience to your professional achievements, personal passions, and creative projects. Explore more with Onemore!"
         />
         <meta
           property="og:image"
@@ -52,19 +51,15 @@ const Home = () => {
 
         {/* <!-- Twitter Card meta tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@urdadx" />
-        <meta name="twitter:creator" content="@urdadx" />
-        <meta
-          property="twitter:domain"
-          content="https://librelinks.vercel.app/"
-        />
-        <meta property="twitter:domain" content="https://librelinks.me/" />
-        <meta property="twitter:domain" content="https://www.librelinks.me/" />
-        <meta property="twitter:url" content="https://librelinks.vercel.app/" />
-        <meta name="twitter:title" content="Librelinks" />
+        <meta name="twitter:site" content="@goodnesslu" />
+        <meta name="twitter:creator" content="@goodnesslu" />
+        <meta property="twitter:domain" content="https://onemo.me/" />
+
+        <meta property="twitter:url" content="https://onemo.me/" />
+        <meta name="twitter:title" content="Onemo" />
         <meta
           name="twitter:description"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="The innovative link-in-bio platform that serves as a gateway to the many dimensions of your life. Seamlessly connect your audience to your professional achievements, personal passions, and creative projects. Explore more with Onemore!"
         />
         <meta
           name="twitter:image"
@@ -75,11 +70,11 @@ const Home = () => {
         <meta
           data-rh="true"
           name="twitter:image:alt"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="The innovative link-in-bio platform that serves as a gateway to the many dimensions of your life. Seamlessly connect your audience to your professional achievements, personal passions, and creative projects. Explore more with Onemore!"
         />
 
         {/* <!-- LinkedIn meta tags --> */}
-        <meta
+        {/* <meta
           property="og:linkedin:image"
           content="https://librelinks.vercel.app/og.png"
         />
@@ -95,10 +90,10 @@ const Home = () => {
         <meta
           property="og:linkedin:description"
           content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
-        />
+        /> */}
 
         {/* <!-- Facebook meta tags --> */}
-        <meta
+        {/* <meta
           property="og:facebook:image"
           content="https://librelinks.vercel.app/og.png"
         />
@@ -114,10 +109,10 @@ const Home = () => {
         <meta
           property="og:facebook:description"
           content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
-        />
+        /> */}
 
         {/* <!-- Instagram meta tags --> */}
-        <meta
+        {/* <meta
           property="og:instagram:image"
           content="https://librelinks.vercel.app/og.png"
         />
@@ -133,10 +128,10 @@ const Home = () => {
         <meta
           property="og:instagram:description"
           content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
-        />
+        /> */}
 
         {/* <!-- Pinterest meta tags --> */}
-        <meta
+        {/* <meta
           property="og:pinterest:image"
           content="https://librelinks.vercel.app/og.png"
         />
@@ -152,7 +147,7 @@ const Home = () => {
         <meta
           property="og:pinterest:description"
           content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
-        />
+        /> */}
       </Head>
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
         <div className="relative overflow-hidden">
@@ -170,7 +165,7 @@ const Home = () => {
                   className="flex items-center gap-2 font-bold text-xl"
                   href="/"
                 >
-                  <h3 className="lg:block">Librelinks</h3>
+                  <h3 className="lg:block">Onemo</h3>
                 </Link>
 
                 <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0">
@@ -179,7 +174,7 @@ const Home = () => {
                     rel="noopener noreferrer"
                     href="/admin"
                   >
-                    {isAuthenticated ? 'Admin' : 'Login'}
+                    {isAuthenticated ? 'Dashboard' : 'Login'}
                   </Link>
                 </div>
               </nav>
