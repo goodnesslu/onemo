@@ -165,7 +165,8 @@ const Home = () => {
                   className="flex items-center gap-2 font-bold text-xl"
                   href="/"
                 >
-                  <h3 className="lg:block">Onemo</h3>
+                  <Image src={''} />
+                  <h3 className="lg:block text-3xl">Onemo</h3>
                 </Link>
 
                 <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0">
