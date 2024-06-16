@@ -92,7 +92,7 @@ const ProfilePage = () => {
   return (
     <>
       <Head>
-        <title> @{handle} | Librelinks</title>
+        <title> {handle} - Onemo </title>
       </Head>
       {!query.isIframe ? (
         <Script
@@ -133,7 +133,7 @@ const ProfilePage = () => {
               className="leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
               delayMs={100}
             >
-              @
+              AV
             </Avatar.Fallback>
           </Avatar.Root>
           <p
