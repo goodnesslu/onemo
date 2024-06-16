@@ -9,6 +9,7 @@ import useLinks from '@/hooks/useLinks';
 import { SocialCards } from '@/components/core/user-profile/social-cards';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import { X } from 'lucide-react';
+import Button from '../ui/button';
 
 const PreviewMobile = ({ close }) => {
   const [, setIsDataLoaded] = useState(false);
@@ -72,7 +73,7 @@ const PreviewMobile = ({ close }) => {
               className="leading-1 flex h-full w-full items-center justify-center bg-slate-900 text-xl text-white font-medium"
               delayMs={100}
             >
-              @
+              AV
             </Avatar.Fallback>
           </Avatar.Root>
           <p
@@ -115,7 +116,7 @@ const PreviewMobile = ({ close }) => {
                 style={{ color: theme.neutral }}
                 className="pt-8 text-md text-white font-semibold lg:text-2xl"
               >
-                Hello World 🚀
+                My Awesome Page 🚀
               </h3>
             </div>
           )}
@@ -133,7 +134,7 @@ const PreviewMobile = ({ close }) => {
                 target="_blank"
                 href="https://twitter.com/NerdyProgramme2"
               >
-                Librelinks
+                Onemo
               </Link>
             </p>
           </footer>
@@ -142,7 +143,7 @@ const PreviewMobile = ({ close }) => {
           <button
             onClick={close}
             style={{ background: `${theme.neutral}` }}
-            className="flex justify-center items-center w-[45px] h-[45px] rounded-full bg-gray-500 text-black text-center font-bold text-lg shadow-lg hover:bg-slate-600"
+            className="flex justify-center items-center w-[45px] h-[45px] rounded-md bg-main border-2 border-black text-black text-center font-bold text-lg shadow-lg hover:bg-bg"
           >
             <X color={theme.primary} size={30} />
           </button>

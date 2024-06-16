@@ -10,6 +10,7 @@ import useCurrentUser from '@/hooks/useCurrentUser';
 import useLinks from '@/hooks/useLinks';
 import * as Switch from '@radix-ui/react-switch';
 import TooltipWrapper from '@/components/utils/tooltip';
+import Button from '../ui/button';
 
 const AddLinkModal = () => {
   const [title, setTitle] = useState('');
@@ -69,7 +70,7 @@ const AddLinkModal = () => {
     <>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-gray-800 bg-opacity-50 w-full" />
-        <Dialog.Content className="contentShow fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 sm:p-8 lg:max-w-3xl w-[350px] sm:w-[500px] shadow-lg md:max-w-lg max-md:max-w-lg focus:outline-none">
+        <Dialog.Content className="contentShow fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md bg-bg p-6 sm:p-8 lg:max-w-3xl w-[350px] sm:w-[500px] shadow-lg md:max-w-lg max-md:max-w-lg focus:outline-none">
           <div className="flex flex-row justify-between items-center mb-4">
             <Dialog.Title className="text-xl text-center font-medium mb-2 sm:mb-0 sm:mr-4">
               Create a new Link
@@ -81,11 +82,11 @@ const AddLinkModal = () => {
             </Dialog.Close>
           </div>
           <form name="add-link-form" className="mb-6">
-            <div className="relative mb-4">
+            <div className="relative mb-4 mt-8">
               <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="block w-full h-10 px-4 py-6 mb-2 leading-tight text-gray-700 border rounded-2xl appearance-none focus:outline-none focus:shadow-outline"
+                className="block w-full h-10 px-4 py-6 mb-2 leading-tight text-gray-700 appearance-none focus:shadow-outline border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md"
                 id="name"
                 type="text"
                 placeholder="Title"
@@ -95,8 +96,10 @@ const AddLinkModal = () => {
               <input
                 value={url}
                 onChange={handleUrlChange}
-                className={`block w-full h-10 px-4 py-6 mb-2 leading-tight text-gray-700 border rounded-2xl appearance-none focus:outline-none ${
-                  urlError ? 'border-red-500' : 'focus:shadow-outline'
+                className={`block w-full h-10 px-4 py-6 mb-2 leading-tight text-gray-700 appearance-none focus:shadow-outline border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md ${
+                  urlError
+                    ? 'border-red-500 focus:shadow-[2px_2px_0px_rgba(255,0,0,1)] active:shadow-[2px_2px_0px_rgba(255,0,0,1)]'
+                    : 'focus:shadow-outline'
                 }`}
                 id="url"
                 type="url"
@@ -104,7 +107,7 @@ const AddLinkModal = () => {
               />
               {urlError && (
                 <small className="text-red-500 text-sm">
-                  Enter a valid URL (ex: https://hello.com)
+                  Enter a valid URL (ex: https://facebook.com)
                 </small>
               )}
             </div>
@@ -121,21 +124,21 @@ const AddLinkModal = () => {
               <Switch.Root
                 checked={isSocial}
                 onCheckedChange={() => setIsSocial(!isSocial)}
-                className="w-[39px] h-[21px] bg-[#E4E4E7] rounded-full relative focus:shadow-black border border-slate-200 data-[state=checked]:bg-slate-900 outline-none cursor-default lg:w-[42px] lg:h-[25px]"
+                className="w-[39px] h-[21px] bg-gray-400 border-black rounded-full relative focus:shadow-black border-2 data-[state=checked]:bg-main data-[state=checked]:shadow-base outline-none cursor-default lg:w-[42px] lg:h-[25px]"
               >
-                <Switch.Thumb className="block w-[17px] h-[17px] bg-white rounded-full shadow-[0_2px_2px] transition-transform duration-100 translate-x-0.5 will-change-transform data-[state=checked]:translate-x-[19px] lg:w-[21px] lg:h-[21px]" />
+                <Switch.Thumb className="block w-[17px] h-[17px] bg-white border-2 border-black rounded-full shadow-[0_2px_2px] transition-transform duration-100 translate-x-0.5 will-change-transform data-[state=checked]:translate-x-[19px] lg:w-[21px] lg:h-[21px] " />
               </Switch.Root>
             </div>
 
             <Dialog.Close asChild>
-              <button
+              <Button
                 onClick={submitLink}
                 disabled={urlError}
                 className={`inline-block w-full px-4 py-4 leading-none 
                      			 text-lg mt-2 text-white rounded-3xl 
                       			${
                               !urlError
-                                ? 'bg-slate-800 hover:bg-slate-900'
+                                ? 'bg-main hover:bg-mainAccent'
                                 : 'bg-slate-500'
                             }`}
               >
@@ -143,7 +146,7 @@ const AddLinkModal = () => {
                 <span role="img" aria-label="sparkling star">
                   ✨
                 </span>
-              </button>
+              </Button>
             </Dialog.Close>
           </form>
         </Dialog.Content>

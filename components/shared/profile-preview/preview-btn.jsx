@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
 import PreviewMobile from './preview-mobile';
+import Button from '../ui/button';
 
 const PreviewBtn = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,13 +19,13 @@ const PreviewBtn = () => {
   return (
     <>
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 lg:hidden">
-        <button
+        <Button
           onClick={toggleDrawer}
-          className="block py-2 px-6 rounded-full bg-slate-700 first-letter
-					text-white text-center font-bold text-lg shadow-lg hover:bg-slate-600"
+          className="block py-2 px-6 rounded-md first-letter 
+					text-white text-center font-bold text-lg hover:bg-slate-600"
         >
           Preview
-        </button>
+        </Button>
       </div>
 
       <Drawer

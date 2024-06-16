@@ -5,6 +5,7 @@ import { TinyLoader } from '@/components/utils/tiny-loader';
 import { useRouter } from 'next/router';
 import Confetti from 'react-dom-confetti';
 import Balancer from 'react-wrap-balancer';
+import Button from '@/components/shared/ui/button';
 
 const Onboarding = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -65,15 +66,12 @@ const Onboarding = () => {
   };
   return (
     <>
-      <div
-        className="absolute inset-0 bg-[url(../public/grid.svg)] bg-center 
-       			[mask-image:linear-gradient(180deg,rgba(255,255,255,0))] bg-repeat"
-      />
+      <div className="absolute inset-0 -z-10 h-full w-full bg-bg  flex  items-center justify-center" />
       <div className="absolute w-full flex min-h-full flex-1 flex-col justify-center px-6 py-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <div className="mx-auto h-[30px] w-[30px] bg-slate-900 rounded-full" />
           <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            <Balancer>Claim your unique handle ✨</Balancer>
+            <Balancer>Choose your username ✨</Balancer>
           </h2>
         </div>
         <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -86,7 +84,7 @@ const Onboarding = () => {
                     htmlFor="handle"
                     className="block text-sm font-medium leading-6 text-gray-700"
                   >
-                    Type your handle
+                    Make it unique 😉
                   </label>
                 </div>
                 <div className="mt-2 flex justify-center">
@@ -97,7 +95,7 @@ const Onboarding = () => {
                     onChange={handleOnChange}
                     type="text"
                     required
-                    className="block w-full rounded-md border border-gray-400 px-3 py-2 ring-offset-gray-200 focus-visible:ring-1 sm:text-sm focus:outline-none focus-visible:ring-offset-2 sm:leading-6"
+                    className="border-black w-full focus:placeholder:text-gray-400 border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md"
                   />
                 </div>
                 {handleTaken && (
@@ -109,10 +107,10 @@ const Onboarding = () => {
             </div>
 
             <div className="mt-4">
-              <button
+              <Button
                 disabled={isLoading}
                 onClick={handleAddHandle}
-                className="flex w-full justify-center rounded-md bg-slate-900 px-3 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
+                className="flex w-full justify-center rounded-md px-3 py-2.5 font-semibold leading-6"
               >
                 {isLoading ? (
                   <>
@@ -123,7 +121,7 @@ const Onboarding = () => {
                 ) : (
                   <span className="text-md">Submit 🚀</span>
                 )}
-              </button>
+              </Button>
             </div>
             <div className="w-full hidden justify-center h-full lg:flex">
               <Confetti active={isExploding} config={config} />

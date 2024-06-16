@@ -1,9 +1,9 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import Preview from '../shared/profile-preview/preview';
 import PreviewBtn from '../shared/profile-preview/preview-btn';
 import Navbar from './navbar/navbar';
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   const router = useRouter();
 
   return (

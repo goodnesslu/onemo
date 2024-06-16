@@ -7,6 +7,7 @@ import axios from 'axios';
 import { isValidUrl, signalIframe } from '@/utils/helpers';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import useCurrentUser from '@/hooks/useCurrentUser';
+import Button from '../ui/button';
 
 const EditLinkModal = ({ id, title, url, close }) => {
   const [newTitle, setNewTitle] = useState(title);
@@ -60,11 +61,7 @@ const EditLinkModal = ({ id, title, url, close }) => {
       <div>
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-gray-800 bg-opacity-50 sm:w-full" />
-          <Dialog.Content
-            className=" contentShow fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                		rounded-2xl bg-white p-6 sm:p-8 lg:max-w-3xl w-[350px] sm:w-[500px] shadow-lg 
-               			md:max-w-lg max-md:max-w-lg focus:outline-none"
-          >
+          <Dialog.Content className="contentShow fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md bg-bg p-6 sm:p-8 lg:max-w-3xl w-[350px] sm:w-[500px] shadow-lg md:max-w-lg max-md:max-w-lg focus:outline-none">
             <div className="flex flex-row justify-between items-center mb-4">
               <Dialog.Title className="text-xl text-center font-medium mb-2 sm:mb-0 sm:mr-4">
                 Edit Link
@@ -83,7 +80,7 @@ const EditLinkModal = ({ id, title, url, close }) => {
                 <input
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
-                  className="block w-full h-10 px-4 py-6 mb-2 leading-tight text-gray-700 border rounded-2xl appearance-none focus:outline-none focus:shadow-outline"
+                  className="block w-full h-10 px-4 py-6 mb-2 leading-tight text-gray-700 appearance-none focus:shadow-outline border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md"
                   id="name"
                   type="text"
                   placeholder="Title"
@@ -93,7 +90,7 @@ const EditLinkModal = ({ id, title, url, close }) => {
                 <input
                   value={newUrl}
                   onChange={handleUrlChange}
-                  className="block w-full h-10 px-4 py-6 mb-2 leading-tight text-gray-700 border rounded-2xl appearance-none focus:outline-none focus:shadow-outline"
+                  className="block w-full h-10 px-4 py-6 mb-2 leading-tight text-gray-700 appearance-none focus:shadow-outline border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md"
                   id="name"
                   type="url"
                   placeholder="URL"
@@ -106,17 +103,17 @@ const EditLinkModal = ({ id, title, url, close }) => {
               </div>
 
               <Dialog.Close asChild>
-                <button
+                <Button
                   onClick={handleEditLink}
                   className="inline-block w-full px-4 py-4 leading-none 
-                        			text-lg mt-2 text-white bg-slate-800 hover:bg-slate-900 rounded-3xl 
+                        			text-lg mt-2 text-white 
                         			focus:outline-none focus:shadow-outline-blue"
                 >
                   Edit link{' '}
                   <span role="img" aria-label="sparkling star">
                     ✨
                   </span>
-                </button>
+                </Button>
               </Dialog.Close>
             </form>
           </Dialog.Content>

@@ -10,11 +10,11 @@ export default function Register() {
   return (
     <>
       <Head>
-        <title>Librelinks | Register</title>
+        <title>Get Started | Register</title>
       </Head>
 
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] flex  items-center justify-center ">
-        <div className="z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-bg  flex  items-center justify-center">
+        <div className="z-10 w-full max-w-md overflow-hidden flex flex-col gap-3 rounded-base border-2 border-black bg-white shadow-base">
           <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
             <Link href="/">
               <Wand color="black" size={30} />

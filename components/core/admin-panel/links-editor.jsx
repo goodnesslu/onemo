@@ -27,6 +27,7 @@ import axios from 'axios';
 import { signalIframe } from '@/utils/helpers';
 import toast from 'react-hot-toast';
 import LinkSkeleton from './link-skeleton';
+import Button from '@/components/shared/ui/button';
 
 const LinksEditor = () => {
   const { data: currentUser } = useCurrentUser();
@@ -82,12 +83,12 @@ const LinksEditor = () => {
         <Dialog.Root>
           <Dialog.Trigger asChild>
             <div className="">
-              <button
-                className="bg-slate-900 w-full font-medium flex justify-center gap-1 
-                				items-center h-12 px-8 rounded-3xl text-white hover:bg-slate-700"
+              <Button
+                className="w-full font-medium flex justify-center gap-1 
+                				items-center h-12 px-8  text-white "
               >
                 <Plus /> Add link
-              </button>
+              </Button>
             </div>
           </Dialog.Trigger>
           <AddLinkModal />
@@ -115,7 +116,7 @@ const LinksEditor = () => {
               ))
             : Array.from({ length: 4 }).map((_, i) => <LinkSkeleton key={i} />)}
           {!isLoading && userLinks?.length === 0 && (
-            <div className="mt-4 w-[245px] h-auto flex flex-col mx-auto">
+            <div className="mt-4 md:pt-20 w-[245px] h-auto flex flex-col mx-auto">
               <Image
                 className="object-cover"
                 width="220"

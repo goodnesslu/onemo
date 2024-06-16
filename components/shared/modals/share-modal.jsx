@@ -49,7 +49,7 @@ const ShareModal = () => {
           <Dialog.Overlay className="fixed inset-0 backdrop-blur-sm bg-gray-800 bg-opacity-50 sm:w-full" />
           <Dialog.Content
             className="contentShow fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                rounded-2xl bg-white p-6 sm:p-8 lg:max-w-3xl w-[350px] sm:w-[500px] shadow-lg 
+                rounded-md bg-bg p-6 sm:p-8 lg:max-w-3xl w-[350px] sm:w-[500px] shadow-lg 
                 md:max-w-lg max-md:max-w-lg focus:outline-none"
           >
             <div className="flex flex-row justify-between items-center mb-1">
@@ -65,16 +65,16 @@ const ShareModal = () => {
             </div>
 
             <Tabs.Root defaultValue="url" className="w-full rounded-md mt-4">
-              <Tabs.List className="flex h-10 items-center rounded-md bg-gray-100 p-1 text-slate-900">
+              <Tabs.List className="flex h-10 items-center rounded-md bg-bg text-slate-900 ">
                 <Tabs.Trigger
                   value="url"
-                  className="flex-1 py-1 px-4 rounded-md text-center data-[state=active]:text-slate-900 data-[state=active]:font-medium data-[state=active]:bg-white text-gray-600"
+                  className="data-[state=active]:border-2 data-[state=active]:border-black flex-1 py-2 px-4 rounded-md text-center data-[state=active]:text-slate-900 data-[state=active]:font-medium data-[state=active]:bg-main text-gray-600"
                 >
                   URL
                 </Tabs.Trigger>
                 <Tabs.Trigger
                   value="QR"
-                  className="flex-1 py-1 px-4 rounded-md text-center data-[state=active]:text-slate-900 data-[state=active]:font-medium  data-[state=active]:bg-white text-gray-600"
+                  className="data-[state=active]:border-2 data-[state=active]:border-black flex-1 py-2 px-4 rounded-md text-center data-[state=active]:text-slate-900 data-[state=active]:font-medium data-[state=active]:bg-main text-gray-600"
                 >
                   QR Code
                 </Tabs.Trigger>
@@ -116,13 +116,13 @@ const ShareModal = () => {
                       </p>
                     </div>
                     <div className="relative mb-4">
-                      <div className="flex justify-between items-center w-full h-6 px-4 py-[28px] mb-2 text-gray-700 border-2 rounded-2xl appearance-none focus:outline-none focus:shadow-outline">
+                      <div className="flex justify-between items-center w-full h-6 px-4 bg-white py-[28px] mb-2 text-gray-700 border-2 border-black rounded-md appearance-none focus:outline-none focus:shadow-outline">
                         <h2 className="truncate w-[250px] lg:w-full">
                           {userProfileLink}
                         </h2>
                         <button
                           onClick={handleCopyLink}
-                          className="w-[80px] p-[12px] leading-none text-md text-white bg-slate-900 hover:bg-slate-700 rounded-3xl focus:outline-none focus:shadow-outline-blue"
+                          className="w-[80px] flex items-center justify-center py-[12px] leading-none text-md text-white bg-slate-900 hover:bg-main rounded-md focus:outline-none focus:shadow-outline-blue text-center px-6"
                         >
                           {isCopied ? 'Copied' : 'Copy'}
                         </button>
@@ -133,7 +133,7 @@ const ShareModal = () => {
 
                 <Tabs.Content value="QR">
                   <QRCodeCanvas
-                    className="mx-auto w-full"
+                    className="mx-auto w-full rounded-md"
                     id="qr-code"
                     size={256}
                     includeMargin={true}
@@ -155,8 +155,8 @@ const ShareModal = () => {
                   </p>
                   <button
                     onClick={downloadQRCode}
-                    className="mt-4 w-full py-3 px-4 text-center text-white bg-slate-900 hover:bg-slate-700
-					          rounded-md focus:outline-none focus:shadow-outline-blue"
+                    className="mt-4 w-full py-3 px-4 text-center text-white bg-main shadow-base
+					          rounded-md focus:outline-none focus:shadow-outline-blue hover:shadow-none border-2 border-black"
                   >
                     Download QR Code
                   </button>

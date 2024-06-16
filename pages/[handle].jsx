@@ -200,9 +200,9 @@ const ProfilePage = () => {
               <Link
                 className="font-semibold"
                 target="_blank"
-                href="https://librelinks.vercel.app/"
+                href="https://onemo.me/"
               >
-                Librelinks
+                Onemo
               </Link>
             </p>
           </footer>

@@ -7,18 +7,18 @@ const ShareButton = () => {
   return (
     <>
       <div className="flex items-center gap-2">
-        <button className="flex bg-white items-center gap-2 border-2 border-slate-300 text-black rounded-lg py-2 px-2 lg:px-4 hover:bg-gray-100 hover:border-slate-300">
+        <button className="flex items-center gap-2  text-black py-2 px-2 lg:px-4 h-12 border-black border-2 p-2.5 hover:bg-bg hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] rounded-md">
           <Share2 size={17} />
           <h3 className="text-sm">Share</h3>
         </button>
-        <Link
+        {/* <Link
           href="https://github.com/urdadx/librelinks"
           target="_blank"
-          className="flex bg-white items-center gap-2 border-2 border-slate-300 text-black rounded-lg py-2 px-2 lg:px-4 hover:bg-gray-100 hover:border-slate-300"
+          className="flex items-center gap-2  text-black py-2 px-2 lg:px-4 h-12 border-black border-2 p-2.5 hover:bg-bg hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] rounded-md"
         >
           <GithubIcon size={isMobile ? 20 : 17} />
           <h3 className="text-sm lg:flex md:hidden hidden">Star on Github</h3>
-        </Link>
+        </Link> */}
       </div>
     </>
   );

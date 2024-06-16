@@ -9,10 +9,10 @@ const Admin = () => {
   return (
     <>
       <Head>
-        <title>Librelinks | Admin</title>
+        <title>Onemo | Admin</title>
       </Head>
       <Layout>
-        <div className="w-full lg:basis-3/5 pl-4 pr-4 border-r overflow-scroll">
+        <div className="w-full bg-bg lg:basis-3/5 pl-4 pr-4 border-r overflow-scroll">
           <LinksEditor />
           {isMobile && <div className="h-[40px] mb-24" />}
         </div>
