@@ -201,13 +201,15 @@ const Home = () => {
                     <h3 className="lg:block font-bold text-3xl">Onemo</h3>
                   </Link>
 
-                  <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0">
+                  <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0 ">
                     <Link
                       // className=" inline-flex items-center gap-2 px-8 py-3 text-md bg-blue-800 rounded-md text-white justify-center font-semibold transition-colors hover:bg-blue-950"
                       rel="noopener noreferrer"
                       href="/admin"
                     >
-                      <Button>{isAuthenticated ? 'Dashboard' : 'Login'}</Button>
+                      <Button className="">
+                        {isAuthenticated ? 'Profile' : 'Login'}
+                      </Button>
                     </Link>
                   </div>
                 </nav>
