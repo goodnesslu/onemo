@@ -5,6 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import { useSession } from 'next-auth/react';
+import Button from '@/components/shared/ui/button';
+import Marquee from 'react-fast-marquee';
+import Accordion from '@/components/shared/ui/accordian';
 
 export const metadata = {
   title: 'Onemo',
@@ -15,6 +18,27 @@ export const metadata = {
 const Home = () => {
   const session = useSession();
   const isAuthenticated = session.status === 'authenticated' ? true : false;
+
+  const icons = [
+    'https://utfs.io/f/00cc3b7f-e5ba-476f-8bfc-790ebab3a064-23vwy.svg',
+    'https://utfs.io/f/74a5dfad-3229-48a2-ac22-a60a8e25f7fb-1tcheo.svg',
+    'https://utfs.io/f/4ffdc03c-5c6b-44d9-962e-5cee3d4bd3a2-1tchep.svg',
+  ];
+
+  const features = [
+    {
+      title: 'Share Your Passion',
+      text: "Express and share what you love with the world. Whether it's your hobby, profession, or a unique talent, let your passion shine through and connect with like-minded individuals.",
+    },
+    {
+      title: 'Showcase Crafts',
+      text: 'Display your creative works and projects. From intricate handmade items to digital products, showcase your products and attract a community that appreciates your skills.',
+    },
+    {
+      title: 'Get Supported',
+      text: 'Empower your journey by gaining support from your community. Share your dreams and goals, and enable your followers to contribute and help turn your aspirations into reality.',
+    },
+  ];
 
   return (
     <>
@@ -155,123 +179,181 @@ const Home = () => {
             className="absolute inset-y-0 w-full h-full"
             aria-hidden="true"
           ></div>
-          <div className="relative pt-6 pb-16 sm:pb-24">
-            <div className="px-4 mx-auto max-w-7xl sm:px-6">
-              <nav
-                className="relative flex items-center justify-between md:justify-start"
-                aria-label="Global"
-              >
-                <Link
-                  className="flex items-center gap-2 font-bold text-xl"
-                  href="/"
+          <div className="relative pt-4">
+            <div className="border-b-2 border-black">
+              <div className="px-4 mx-auto mb-6 max-w-7xl sm:px-6">
+                <nav
+                  className="relative flex items-center justify-between md:justify-start"
+                  aria-label="Global"
                 >
-                  <Image src={''} />
-                  <h3 className="lg:block text-3xl">Onemo</h3>
-                </Link>
-
-                <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0">
                   <Link
-                    className="group inline-flex items-center gap-2 px-4 text-sm  bg-slate-900 border rounded-3xl text-white w-[116px] h-[35px] justify-center font-semibold transition-colors hover:bg-slate-700"
-                    rel="noopener noreferrer"
-                    href="/admin"
+                    className="flex mt-1 items-center gap-2 font-bold text-xl"
+                    href="/"
                   >
-                    {isAuthenticated ? 'Dashboard' : 'Login'}
+                    <Image
+                      src={
+                        'https://utfs.io/f/c0930d4e-af20-48bf-af90-9170d548c238-7zmgxc.png'
+                      }
+                      alt="Onemo Logo"
+                      width={32}
+                      height={32}
+                    />
+                    <h3 className="lg:block font-bold text-3xl">Onemo</h3>
+                  </Link>
+
+                  <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0">
+                    <Link
+                      // className=" inline-flex items-center gap-2 px-8 py-3 text-md bg-blue-800 rounded-md text-white justify-center font-semibold transition-colors hover:bg-blue-950"
+                      rel="noopener noreferrer"
+                      href="/admin"
+                    >
+                      <Button>{isAuthenticated ? 'Dashboard' : 'Login'}</Button>
+                    </Link>
+                  </div>
+                </nav>
+              </div>
+            </div>
+
+            <div className="px-4 mx-auto max-w-7xl  sm:px-6">
+              <header className="flex  w-full h-screen flex-col items-center justify-center">
+                <div className="mx-auto w-container max-w-full px-5 py-[120px] text-center lg:py-[100px]">
+                  <h1 className="text-5xl w-full md:w-[90%] mx-auto font-heading md:text-5xl lg:text-6xl">
+                    More than your bio. Share more
+                  </h1>
+                  <p className="my-12 md:w-[70%] mx-auto mt-8 text-lg font-normal leading-relaxed md:text-xl lg:text-2xl lg:leading-relaxed">
+                    Our platform allows you to showcase your unique journey,
+                    connect with and build a supportive community. Click below
+                    to start sharing more.
+                  </p>
+                  <Link href="/register">
+                    <Button
+                      size="lg"
+                      className="mx-auto text-base font-heading md:text-lg lg:h-14 lg:text-xl"
+                    >
+                      Claim your link
+                    </Button>
                   </Link>
                 </div>
-              </nav>
+              </header>
             </div>
-            <div className="px-4 mx-auto mt-24 max-w-7xl sm:mt-16 sm:px-6">
-              <div className="flex justify-center items-center mb-6">
-                <a
-                  className="group inline-flex items-center gap-2 px-4 py-4 text-sm bg-gray-50 border rounded-3xl text-gray-500 w-[180px] h-[35px] justify-center transition-colors hover:bg-gray-100"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/urdadx/librelinks"
-                >
-                  <div className="">
-                    <GithubStar />
-                  </div>{' '}
-                  Star us on Github
-                </a>
+
+            <section className="border-t-2 overflow-hidden border-t-foreground bg-bg py-20 font-base lg:py-[100px]">
+              <h2 className="mb-14 px-5 text-center text-2xl font-heading md:text-3xl lg:mb-20 lg:text-4xl">
+                Uncover the Magic
+                <span className=" align-top text-[1rem]">★</span>
+              </h2>
+
+              <div className="mx-auto grid w-screen grid-cols-1 gap-5 px-12 sm:grid-cols-2 md:px-24 lg:grid-cols-3">
+                {features.map((feature, i) => (
+                  <div
+                    className={`flex flex-col gap-3 rounded-base border-2 border-black bg-white px-8 py-5 shadow-base ${
+                      i === features.length - 1 && features.length < 4
+                        ? 'md:col-span-3 lg:col-span-1'
+                        : ''
+                    }`}
+                    key={i}
+                  >
+                    <img
+                      className="h-12 w-12 rounded-base"
+                      src={`${icons[i]}`}
+                      alt="icon"
+                    />
+
+                    <h4 className="mt-2 text-xl font-heading">
+                      {feature.title}
+                    </h4>
+                    <p>{feature.text}</p>
+                  </div>
+                ))}
               </div>
-              <div className="text-center">
-                <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="block">The free & opensource</span>
-                  <span className="hero-title block ">link in bio tool</span>
-                </h1>
-                <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                  Librelinks is an opensource link in bio tool that helps you
-                  easily manage your links, transforming your online presence.
-                </p>
+            </section>
+            <div>
+              <Marquee
+                className="border-y-2 border-y-foreground bg-background py-3 font-base sm:py-5"
+                direction="left"
+              >
+                {Array(10)
+                  .fill('xd')
+                  .map((x, id) => (
+                    <div className="flex items-center" key={id}>
+                      <span className="mx-10 text-xl font-heading sm:text-2xl lg:text-4xl">
+                        Join our 100+ creator community
+                      </span>
+                      <img
+                        className="w-[35px] sm:w-[45px]"
+                        src={`${icons[2]}`}
+                        alt="star"
+                      />
+                    </div>
+                  ))}
+              </Marquee>
+            </div>
+
+            {/* FAQ */}
+
+            <section className=" bg-bg py-20 font-base">
+              <h2 className="mb-14 px-5 text-center text-2xl font-heading md:text-3xl lg:mb-20 lg:text-4xl">
+                Frequently asked questions
+              </h2>
+
+              <div className="flex flex-col gap-4 mx-auto px-4 md:w-[60%] lg:w-[70%]">
+                <Accordion
+                  question="Why do I need Onemo?"
+                  answer="Onemo provides a streamlined solution to showcase all aspects
+                  of your online presence in one place. Whether you're a
+                  creator, entrepreneur, or influencer, Onemo helps you
+                  effectively connect with your audience by offering a central
+                  hub for all your important links and information.
+                  With Onemo, you can simplify the process of sharing your
+                  content and engaging with your community, ultimately saving
+                  you time and enhancing your online presence"
+                />
+                <Accordion
+                  question="Is Onemo the best tool to connect my community?"
+                  answer="While we believe Onemo offers a fantastic platform for
+                  community engagement, the 'best' tool depends on your specific
+                  needs and goals.
+                  
+                  Onemo is designed to provide a user-friendly interface for
+                  both creators and their communities, offering features like
+                  link management, community support, and seamless integration
+                  with social media platforms.
+                  
+                  We encourage you to explore Onemo's features and see how they
+                  align with your community-building objectives."
+                />
+                <Accordion
+                  question="Can I get paid after donations from my community through Onemo?"
+                  answer="Yes, Onemo offers a convenient way for you to receive
+                  financial support from your community.
+                  
+                  By integrating payment options such as donation links, tip
+                  jars, or subscription services, you can easily monetize your
+                  content and receive direct support from your audience.
+                  
+                  Onemo empowers creators to leverage their community's
+                  generosity and turn their passion into a sustainable income
+                  stream."
+                />
+                <Accordion
+                  question="Where can I use my Onemo.me link?"
+                  answer="Your Onemo link is like a handy tool that brings all your
+                  important online stuff together and makes it easy for people
+                  to find.
+                  
+                  You can put it in places like your Instagram, Twitter,
+                  LinkedIn, or TikTok bio to show all your links in one spot.
+                  Also, by adding it to your website, blog, email signature,
+                  YouTube channel, or business cards, it helps people move
+                  around smoothly, so they can check out your work, follow you
+                  on social media, or find other helpful things with no trouble."
+                />
               </div>
-              <div className="flex justify-center mt-6">
-                <div className="flex flex-col items-center">
-                  <span className="inline-flex rounded-xl shadow">
-                    <Link legacyBehavior href="/register">
-                      <a className="inline-flex items-center px-4 py-2 font-medium text-lg gradient-btn border border-transparent rounded-xl text-white w-[190px] h-[50px] justify-center hover:shadow-lg">
-                        Get started
-                      </a>
-                    </Link>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute inset-0 flex flex-col" aria-hidden="true">
-              <div className="flex-1" />
-              <div className="flex-1 w-full bg-slate-900 " />
-            </div>
-            <div className="px-4 mx-auto max-w-7xl sm:px-6">
-              <Image
-                className="relative rounded-lg shadow-lg"
-                src="/assets/new_shot.png"
-                alt="App screenshot"
-                height={700}
-                width={1200}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="bg-slate-900">
-          <div className="px-4 py-16 mx-auto max-w-7xl sm:py-24 sm:px-6 lg:px-8">
-            <h2 className="text-lg font-semibold tracking-wide text-center text-gray-400">
-              Made by{' '}
-              <a
-                className="hover:text-emerald-500"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://twitter.com/NerdyProgramme2"
-              >
-                @urdadx
-              </a>
-            </h2>
-            <div className="flex items-center gap-4 justify-center mt-4">
-              <a
-                href="https://x.com/NerdyProgramme2"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="twitter logo"
-              >
-                <TwitterIcon color="white" />
-              </a>
-              <a
-                href="https://github.com/urdadx"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="github logo"
-              >
-                <GithubIcon color="white" />
-              </a>
-              <a
-                href="https://urdadx.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="insta logo"
-              >
-                <GlobeIcon color="white" />
-              </a>
-            </div>
+            </section>
+            <footer className="font-base border-t-2 border-black bg-background flex px-5 md:px-24 py-5 w-screen items-center justify-between text-center ">
+              <p>Legal</p>
+              <p>Copyright 2024, Onemo, Inc.</p>
+            </footer>
           </div>
         </div>
       </div>
