@@ -9,7 +9,7 @@ const Admin = () => {
   return (
     <>
       <Head>
-        <title>Onemo | Admin</title>
+        <title>Onemo - Admin</title>
       </Head>
       <Layout>
         <div className="w-full bg-bg lg:basis-3/5 pl-4 pr-4 border-r overflow-scroll">

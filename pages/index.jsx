@@ -187,7 +187,7 @@ const Home = () => {
                   aria-label="Global"
                 >
                   <Link
-                    className="flex mt-1 items-center gap-2 font-bold text-xl"
+                    className="flex items-center justify-center gap-2 font-bold text-xl"
                     href="/"
                   >
                     <Image
@@ -195,10 +195,12 @@ const Home = () => {
                         'https://utfs.io/f/c0930d4e-af20-48bf-af90-9170d548c238-7zmgxc.png'
                       }
                       alt="Onemo Logo"
-                      width={32}
-                      height={32}
+                      width={38}
+                      height={38}
                     />
-                    <h3 className="lg:block font-bold text-3xl">Onemo</h3>
+                    <h3 className="lg:block mt-[5px] font-bold text-3xl">
+                      Onemo
+                    </h3>
                   </Link>
 
                   <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0 ">
@@ -216,23 +218,23 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="px-4 mx-auto max-w-7xl  sm:px-6">
+            <div className="px-4 mx-auto max-w-7xl  sm:px-4">
               <header className="flex  w-full h-screen flex-col items-center justify-center">
-                <div className="mx-auto w-container max-w-full px-5 py-[120px] text-center lg:py-[100px]">
+                <div className="mx-auto w-container max-w-full py-[120px] text-center lg:py-[100px]">
                   <h1 className="text-5xl w-full md:w-[90%] mx-auto font-heading md:text-5xl lg:text-6xl">
-                    More than your bio. Share more
+                    A Page to Share Your World with{' '}
+                    <span className="text-mainAccent">Everyone</span>
                   </h1>
                   <p className="my-12 md:w-[70%] mx-auto mt-8 text-lg font-normal leading-relaxed md:text-xl lg:text-2xl lg:leading-relaxed">
-                    Our platform allows you to showcase your unique journey,
-                    connect with and build a supportive community. Click below
-                    to start sharing more.
+                    Showcase your unique journey, connect with and build a
+                    supportive community. Click below to start sharing more.
                   </p>
-                  <Link href="/register">
+                  <Link href="/admin">
                     <Button
                       size="lg"
                       className="mx-auto text-base font-heading md:text-lg lg:h-14 lg:text-xl"
                     >
-                      Claim your link
+                      {isAuthenticated ? 'Manage Your Page' : 'Claim Your Link'}
                     </Button>
                   </Link>
                 </div>
